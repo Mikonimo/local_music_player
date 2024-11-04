@@ -78,12 +78,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
 ## Authors
-Mark Manani - [Github](https://github.com/Mikonimo).
-Evans Otieno - [Github](https://github.com).
-Victor Muita - [Github](https://github.com).
-Micky Mwita - [Github](https://github.com).
-Teddy Oduor - [Github](https://github.com).
-Collins Kimani - [Github](https://github.com).
+Mark Manani - [Github](https://github.com/Mikonimo)
+Evans Otieno - [Github](https://github.com)
+Victor Muita - [Github](https://github.com)
+Micky Mwita - [Github](https://github.com)
+Teddy Oduor - [Github](https://github.com)
+Collins Kimani - [Github](https://github.com)
 
 ## Acknowledgments
 
