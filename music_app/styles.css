@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #07435b;
+    color: #0d87b8;
+}
+
+.player-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #624d00;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #566278;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.controls button:hover {
+    background-color: #001289;
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#progress-bar {
+    width: 100%;
+    margin: 0 10px;
+}
+
+#track-info {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
