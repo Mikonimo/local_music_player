@@ -38,7 +38,7 @@ To run the project, you only need a modern web browser.
 
 3. **Open `index.html` in your web browser**
    - You can simply double-click `index.html to open it in a browser.
-   - Alternativel, you can open the file using a local development server or live preview in a code editor like VSCode.
+   - Alternatively, you can open the file using a local development server or live preview in a code editor like VSCode.
 
 ### Usage
 1. Open the player in your browser.
