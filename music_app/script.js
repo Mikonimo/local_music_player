@@ -7,9 +7,17 @@ const trackInfo = document.getElementById('track-info');
 const progressBar = document.getElementById('progress-bar');
 const currentTimeDisplay = document.getElementById('current-time');
 const durationDisplay = document.getElementById('duration');
+const volumeSlider = document.getElementById('volume-slider');
 
 let trackQueue = []; // Queue of tracks to play
 let currentTrackIndex = 0;
+
+//Set initial volume
+audioPlayer.volume = volumeSlider.value;
+//Update volume when slider changes
+volumeSlider.addEventListener('input', () => {
+    audioPlayer.volume = volumeSlider.value;
+});
 
 // Load selected files into the track queue and start playing the first track if none is playing
 fileInput.addEventListener('change', (event) => {

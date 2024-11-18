@@ -49,3 +49,13 @@ body {
     font-size: 14px;
     font-weight: bold;
 }
+
+#volume-control {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+#volume-slider {
+    width: 100%;
+    margin-left: 10px;
+}
