@@ -61,6 +61,8 @@ audioPlayer.addEventListener('ended', () => {
         currentTrackIndex = 0; // Loop back to start if at end of queue
         loadTrack(currentTrackIndex);
     }
+    // Reset play button text
+    playBtn.textContent = '▶️ Play';
 });
 
 // Update the progress bar and time display during playback
@@ -72,8 +74,8 @@ function loadTrack(index) {
     const track = trackQueue[index];
     audioPlayer.src = URL.createObjectURL(track);
     trackInfo.textContent = `Track: ${track.name}`;
-    audioPlayer.play();
     playBtn.textContent = '⏸️ Pause';
+    audioPlayer.play();
     audioPlayer.addEventListener('loadedmetadata', displayDuration);
 }
 
@@ -81,8 +83,11 @@ function loadTrack(index) {
 function updateProgress() {
     const currentTime = audioPlayer.currentTime;
     const duration = audioPlayer.duration;
-    progressBar.value = (currentTime / duration) * 100 || 0;
-    currentTimeDisplay.textContent = formatTime(currentTime);
+    // Ensure duration is a valid number before updating the progress bar
+    if (!isNaN(duration)) {
+        progressBar.value = (currentTime / duration) * 100 || 0;
+        currentTimeDisplay.textContent = formatTime(currentTime);
+    }
 }
 
 // Seek to a specific point in the track
