@@ -5,140 +5,215 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
     background-color: #121212;
     color: #b3b3b3;
 }
 
 .player-container {
-    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 600px;
     padding: 20px;
-    background-color: #181818;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    margin: auto;
+    background-color: #1c1c1e;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Track Info */
+#track-info {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Album Art / Track List Area */
 .album-art {
-    margin-bottom: 20px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px 0;
 }
 
 .album-art img {
     width:  100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.track-list {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #2c2c2e;
+    border-radius: 10px;
+}
+
+.track-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.track-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+}
+
+.track-list li:hover {
+    background-color: #3a3a3c;
+}
+
+.track-list li.active {
+    background-color: #1db954;
+    color: #fff;
+}
+
+/* Favourite Button */
+.favourite {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #b3b3b3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.favourite.active {
+    color: #e0245e;
+}
+
+/* Add Tracks Button */
+.add-tracks {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #1db954;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.add-tracks:hover {
+    color: #1ed760;
+}
+
+/* Volume Control */
+#volume-control {
+    position: absolute;
+    left: 20px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#volume-icon {
+    font-size: 1.5em;
+    color: #1db954;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#volume-slider {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    height: 100px;
+    width: 5px;
+    margin-top: 5px;
+    background-color: #2c2c2c;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+/* Control Buttons */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .controls button {
     background: none;
-    border: 2px;
-    border-radius: 16px;
-    color: #1db954;
-    font-size: 24px;
-    margin: 10px;
+    border: none;
+    color: #b3b3b3;
+    font-size: 1.5em;
     cursor: pointer;
     transition: color 0.2s;
 }
 
 .controls button:hover {
-    background-color: #1ed760;
+    background-color: #1db954;
+    border-radius: 8px;
 }
 
+.controls button.active {
+    color: #ffffff;
+    background-color: #03511e;
+    border-radius: 8px;
+}
+
+/* Progress Bar */
 #progress-container {
+    width: 90%;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 #progress-bar {
     flex-grow: 1;
     margin: 0 10px;
-    height: 4px;
-    background-color: #404040;
-    border-radius: 2px;
+    height: 5px;
+    background-color: #2c2c2c;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/**#track-info {
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
-    */
-.track-info h2 {
-    color: #fff;
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.track-info p {
-    color: #1db954;
-    font-size: 14px;
-}
-
-#volume-control input {
-    margin-top: 10px;
-    width: 100%;
-}
-#volume-slider {
-    width: 100%;
-    margin-left: 10px;
-}
-
-#track-list {
-    list-style-type: none;
-    padding: 10px;
-    margin-top: 20px;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: #1c1c1e;
+#current-time, #duration {
+    font-size: 0.9em;
     color: #b3b3b3;
-    border-radius: 5px;
 }
 
-.track-item {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-.track-item :hover {
-    background-color: #444;
-}
-
-.track-item.active {
-    background-color: #1db954;
-    color: #fff;
-}
-
-.extra-controls button {
-    transition: background-color 0.2s ease, color 0.2s ease;
+/* Toggle Tracklist Button */
+.toggle-tracklist {
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+    font-size: 1.5em;
+    color: #b3b3b3;
     background: none;
-    border: 4px;
-    border-radius: 8px;
-    font-size: 24px;
-    margin: 10px;
     cursor: pointer;
+    transition: color 0.2s;
 }
 
-.extra-controls button:active {
-    background-color: #1db954;
+.toggle-tracklist:hover {
+    color: #ffffff;
 }
 
-#choose-files-btn {
-    margin-top: 20px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    background-color: #1db954;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#choose-files-btn:hover {
-    background-color: #1ed760;
+.hidden {
+    display: none !important;
 }
