@@ -79,11 +79,6 @@ Contributions are welcome! Feel free to open issues or submit pull requests to i
 
 ## Authors
 Mark Manani - [Github](https://github.com/Mikonimo)
-Evans Otieno - [Github](https://github.com)
-Victor Muita - [Github](https://github.com)
-Micky Mwita - [Github](https://github.com)
-Teddy Oduor - [Github](https://github.com)
-Collins Kimani - [Github](https://github.com)
 
 ## Acknowledgments
 
